@@ -8,6 +8,7 @@ import footerComponent from "./components/footer-comp.js";
 import loaderComponent from "./components/loader-comp.js";
 import massageComponent from "./components/message-comp.js";
 
+import breadcrumbsComponent from "./components/breadcrumbs-comp.js";
 import editItemComponent from "./components/editItem-comp.js";
 
 const queryString = document.location.search;
@@ -37,11 +38,16 @@ container.innerHTML = `
 
     container.innerHTML = `
       <div class="container">
-        <div class="breadcrumbs"></div>
-        <section class="editItem__container"></section>
+        <div class="breadcrumbs__container"></div>
+        <section class="editItem__container">
+          <h2>Edit Item</h2>
+          <div class="message__container"></div>
+          <div class="form__container"></div>
+        </section>
       </div>
     `;
 
+    breadcrumbsComponent();
     editItemComponent(json, jsonCategory, jsonSubcategory);
   } catch (error) {
     console.log("Error message", error);

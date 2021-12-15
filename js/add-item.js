@@ -8,6 +8,7 @@ import footerComponent from "./components/footer-comp.js";
 import loaderComponent from "./components/loader-comp.js";
 import massageComponent from "./components/message-comp.js";
 
+import breadcrumbsComponent from "./components/breadcrumbs-comp.js";
 import addItemComponent from "./components/addItem-comp.js";
 
 if (!loadToken()) {
@@ -31,7 +32,7 @@ container.innerHTML = `
 
     container.innerHTML = `
   <div class="container">
-    <div class="breadcrumbs"></div>
+    <div class="breadcrumbs__container"></div>
     <section class="addItem__container">
       <h2>Add Item</h2>
       <div class="message__container"></div>
@@ -39,7 +40,7 @@ container.innerHTML = `
     </section>
   </div>
 `;
-
+    breadcrumbsComponent();
     addItemComponent(jsonCategory, jsonSubcategory);
   } catch (error) {
     console.log("Error message", error);

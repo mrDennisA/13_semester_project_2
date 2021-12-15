@@ -2,10 +2,8 @@ import editItemFunction from "../utils/editItem-func.js";
 import deleteFunction from "../utils/delete-func.js";
 
 export default function addItemComponent(json, jsonCategory, jsonSubcategory) {
-  const container = document.querySelector(".editItem__container");
+  const container = document.querySelector(".form__container");
   container.innerHTML = `
-  <h2>Edit</h2>
-  <div class="message__container"></div>
   <form class="addItem-form" data-id="${json.id}">
     <div>
       <label for="title">Title</label>

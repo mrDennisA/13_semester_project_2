@@ -5,8 +5,11 @@ import headerLoginComponent from "./headerLogin-comp.js";
 import headerCartComponent from "./headerCart-comp.js";
 import headerSearchComponent from "./headerSearch-comp.js";
 
-export default function headerComponent() {
-  const pathname = window.location.pathname.split("/").pop();
+export default function headerComponent(json = "") {
+  const pathname = document.location.pathname
+    .split("/")
+    .pop()
+    .replace(/\/?.html/g, "");
 
   const container = document.querySelector("header");
   container.innerHTML = `
@@ -32,10 +35,10 @@ export default function headerComponent() {
     <nav class="nav__container">
       <button class="button">${BARCLOSED_ICON}</button>
       <div class="navlink">
-        <a class="link ${pathname === "" || pathname === "index.html" ? "active" : ""}" href="./">Home</a>
-        <a class="link ${pathname === "kitchen.html" ? "active" : ""}" href="./kitchen.html">Kitchen</a>
-        <a class="link ${pathname === "lounge.html" ? "active" : ""}" href="./lounge.html">Lounge</a>
-        <a class="link ${pathname === "bedroom.html" ? "active" : ""}" href="./bedroom.html">Bedroom</a>
+        <a class="link ${pathname === "" || pathname === "index" ? "active" : ""}" href="./">Home</a>
+        <a class="link ${pathname === "kitchen" || subPathname(json) === "kitchen" ? "active" : ""}" href="./kitchen.html">Kitchen</a>
+        <a class="link ${pathname === "lounge" || subPathname(json) === "lounge" ? "active" : ""}" href="./lounge.html">Lounge</a>
+        <a class="link ${pathname === "bedroom" || subPathname(json) === "bedroom" ? "active" : ""}" href="./bedroom.html">Bedroom</a>
       </div>
     </nav>
   `;
@@ -44,4 +47,21 @@ export default function headerComponent() {
   headerLoginComponent();
   headerCartComponent();
   headerSearchComponent();
+}
+
+function subPathname(json) {
+  if (typeof json !== "string") {
+    if (json.category.name.toLowerCase() === "kitchen") {
+      return "kitchen";
+    }
+
+    if (json.category.name.toLowerCase() === "lounge") {
+      return "lounge";
+    }
+
+    if (json.category.name.toLowerCase() === "bedroom") {
+      return "bedroom";
+    }
+    return false;
+  }
 }

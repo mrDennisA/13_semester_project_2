@@ -552,6 +552,45 @@ label {
   width: 24px;
 }
 
+.breadcrumbs__container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.breadcrumbs__container ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 24px;
+}
+
+.breadcrumbs__container ul a {
+  color: #a3978f;
+}
+
+.breadcrumbs__container ul a:hover {
+  color: #38322e;
+  text-decoration: underline;
+}
+
+.breadcrumbs__container ul .crumbs {
+  color: #38322e;
+}
+
+.breadcrumbs__container ul .arrow-small {
+  width: 12px;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  overflow: hidden;
+}
+
 .card__container {
   display: -ms-grid;
   display: grid;

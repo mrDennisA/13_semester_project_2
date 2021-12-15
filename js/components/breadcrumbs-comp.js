@@ -1,28 +1,44 @@
 import { ARROWSMALL_ICON } from "./icon-comp.js";
 
-export default function breadcrumbsComponent() {
-  const { pathname } = document.location;
+export default function breadcrumbsComponent(json) {
+  const path = document.location.pathname
+    .split("/")
+    .pop()
+    .replace(/\/?.html/g, "");
+  let pathName = path.charAt(0).toUpperCase() + path.slice(1);
 
-  console.log(pathname);
-
-  let page = "";
-  if (pathname === "/noroff/FEU2/design_2_ma/kitchen.html") {
-    page = "Kitchen";
-  }
-  if (pathname === "/noroff/FEU2/design_2_ma/lounge.html") {
-    page = "Lounge";
-  }
-  if (pathname === "/noroff/FEU2/design_2_ma/bedroom.html") {
-    page = "Bedroom";
+  if (path === "search-result") {
+    pathName = "Search result";
   }
 
-  const container = document.querySelector(".breadcrumbs");
-  container.innerHTML = `
-    <ul>
-      <li><a href="./">Home</a></li>
-      <li>${ARROWSMALL_ICON}</li>
-      <li class="crumbs">${page}</li>
-    </ul>
-  
-  `;
+  if (path === "add-item") {
+    pathName = "Add item";
+  }
+
+  if (path === "edit-item") {
+    pathName = "Edit item";
+  }
+
+  const container = document.querySelector(".breadcrumbs__container");
+  if (path === "details") {
+    pathName = json.title;
+
+    container.innerHTML = `
+      <ul>
+        <li><a href="./">Home</a></li>
+        <li>${ARROWSMALL_ICON}</li>
+        <li><a href="./${json.category.name.toLowerCase()}.html">${json.category.name}</a></li>
+        <li>${ARROWSMALL_ICON}</li>
+        <li class="crumbs">${pathName}</li>
+      </ul>
+    `;
+  } else {
+    container.innerHTML = `
+      <ul>
+        <li><a href="./">Home</a></li>
+        <li>${ARROWSMALL_ICON}</li>
+        <li class="crumbs">${pathName}</li>
+      </ul>
+    `;
+  }
 }

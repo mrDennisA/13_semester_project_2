@@ -1,0 +1,33 @@
+.breadcrumbs__container {
+  ul {
+    display: flex;
+    gap: 2px;
+    font-size: 14px;
+    font-weight: 400;
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 24px;
+    }
+
+    a {
+      color: getColor(color02);
+    }
+
+    a:hover {
+      color: getColor(color01);
+      text-decoration: underline;
+    }
+
+    .crumbs {
+      color: getColor(color01);
+    }
+
+    .arrow-small {
+      width: 12px;
+      transform: translateY(1px);
+      overflow: hidden;
+    }
+  }
+}
