@@ -1,0 +1,7 @@
+main .container {
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+/*# sourceMappingURL=details.css.map */

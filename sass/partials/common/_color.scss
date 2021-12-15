@@ -1,0 +1,32 @@
+$theme-colours: (
+  color01: hsl(24, 10%, 20%),
+  color02: hsl(24, 10%, 60%),
+  color03: hsl(24, 20%, 85%),
+  color04: hsl(30, 15%, 95%),
+  body01: hsl(16, 10%, 35%),
+  highlight01: hsl(24, 100%, 40%),
+  highlight02: hsla(24, 100%, 40%, 0.5),
+  white01: hsla(0, 0%, 100%, 1),
+  white02: hsla(0, 0%, 100%, 0.25),
+  success01: hsla(120, 100%, 25%, 1),
+  success02: hsla(120, 100%, 25%, 0.25),
+  warning01: hsla(39, 100%, 50%, 1),
+  warning02: hsla(39, 100%, 50%, 0.25),
+  error01: hsla(0, 100%, 40%, 1),
+  error02: hsla(0, 100%, 40%, 0.25),
+  disabled01: hsla(0, 0%, 85%, 1),
+  shadow01: hsla(0, 0%, 0%, 0.05),
+);
+
+@function getColor($color) {
+  @return map-get($theme-colours, $color);
+}
+
+* {
+  color: getColor(color01);
+}
+
+p,
+label {
+  color: getColor(body01);
+}

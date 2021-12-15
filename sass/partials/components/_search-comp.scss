@@ -1,0 +1,57 @@
+.search__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+
+  form {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    background: getColor(white01);
+    margin: 0 1rem;
+    box-shadow: 0 0 0 1px getColor(color03) inset;
+    border-radius: 4px;
+    // overflow: hidden;
+  }
+
+  form:hover {
+    box-shadow: 0 0 0 1px getColor(color02) inset;
+  }
+
+  input {
+    padding: 0 1rem;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  button .icon {
+    width: 24px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    background: unset;
+    height: 96px;
+    width: unset;
+    border-top: unset;
+
+    input {
+      max-width: 256px;
+      width: 22.5vw;
+    }
+  }
+}

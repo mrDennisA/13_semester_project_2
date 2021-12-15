@@ -1,0 +1,100 @@
+// Common
+@import "./common/typography";
+@import "./common/color";
+@import "./common/icons";
+@import "./common/modal";
+@import "./common/message";
+@import "./common/loader";
+
+// Header
+@import "./components/header-comp";
+
+// Components
+@import "./components/add-item-comp";
+@import "./components/banner-comp";
+@import "./components/card-comp";
+@import "./components/cart-comp";
+@import "./components/category-comp";
+@import "./components/details-comp";
+@import "./components/login-comp";
+@import "./components/nav-comp";
+@import "./components/search-comp";
+@import "./components/user-comp";
+
+// Footer
+@import "./components/footer-comp";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+
+  border: unset;
+  outline: unset;
+  background: unset;
+}
+
+:focus {
+  outline: getColor(highlight02) solid 2px;
+}
+
+body.using-mouse :focus {
+  outline: unset;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: getColor(color04);
+}
+
+#root {
+  flex: 1 0 auto;
+}
+
+main {
+  margin: 1rem 0 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.loader {
+  margin: 0 auto;
+  font-family: $font-logo;
+  font-weight: 700;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    margin: 2rem 0 4rem;
+  }
+}

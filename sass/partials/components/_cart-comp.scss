@@ -1,0 +1,154 @@
+// Grid Layout
+.cart__component {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "c2 c2"
+    "c1 c5"
+    "c1 c3"
+    "c1 c4";
+  gap: 1rem;
+  background: getColor(white01);
+  padding: 1rem;
+  border-radius: 4px;
+
+  & > div {
+    display: grid;
+    // align-items: center;
+  }
+
+  .media__container {
+    grid-area: c1;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .media__container .link {
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+  }
+
+  .image.mouse-over {
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+  .image.mouse-over:hover {
+    opacity: 1;
+  }
+
+  .title__container {
+    grid-area: c2;
+  }
+
+  .quantity__container {
+    grid-area: c3;
+    justify-items: end;
+
+    & > div {
+      display: flex;
+    }
+  }
+
+  .price__container {
+    grid-area: c4;
+    justify-items: end;
+  }
+
+  .delete__container {
+    grid-area: c5;
+    justify-items: end;
+  }
+
+  @media only screen and (min-width: 576px) {
+    grid-template-columns: auto 1fr 1fr auto;
+    grid-template-areas:
+      "c1 c2 c2 c5"
+      "c1 c3 c4 c4";
+
+    & > div {
+      align-items: center;
+    }
+
+    .price__container {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+  }
+
+  @media only screen and (min-width: 992px) {
+    grid-template-columns: auto 2fr 1fr 2fr auto;
+    grid-template-areas: "c1 c2 c3 c4 c5";
+
+    .quantity__container {
+      justify-items: center;
+    }
+
+    .price__container {
+      justify-items: center;
+    }
+  }
+}
+
+// Rest of style
+.cart__component {
+  &.empty {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .image {
+    position: absolute;
+    object-fit: cover;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+
+  .button {
+    cursor: pointer;
+    box-shadow: 0 0 0 1px getColor(color03) inset;
+    background: getColor(color04);
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .button.minus {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .button.plus {
+    border-radius: 0 4px 4px 0;
+  }
+
+  .button.delete {
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+
+  .button,
+  .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+  }
+
+  .input {
+    font-size: 16px;
+    box-shadow: 0 1px 0 getColor(color03) inset, 0 -1px 0 getColor(color03) inset;
+    // border-top: 1px getColor(color03) solid;
+    // border-bottom: 1px getColor(color03) solid;
+  }
+
+  .button:hover,
+  .input:hover {
+    box-shadow: 0 0 0 1px getColor(highlight02) inset;
+  }
+}

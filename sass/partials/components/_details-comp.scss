@@ -1,0 +1,95 @@
+.details__component {
+  display: grid;
+  grid-template-areas:
+    "d2"
+    "d3"
+    "d1"
+    "d4"
+    "d5";
+  gap: 1rem 2rem;
+  background: getColor(white01);
+  padding: 1rem;
+  border-radius: 4px;
+
+  .media {
+    grid-area: d1;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .title {
+    grid-area: d2;
+
+    &__name {
+      font-size: 1.5rem;
+    }
+  }
+
+  .price {
+    grid-area: d3;
+
+    &__number {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+
+  .add-to-cart {
+    grid-area: d4;
+  }
+
+  .description {
+    grid-area: d5;
+
+    &__text {
+      display: grid;
+      gap: 1rem;
+    }
+  }
+
+  .button {
+    height: 48px;
+    width: 100%;
+    color: getColor(highlight01);
+    box-shadow: 0 0 0 1px getColor(highlight01) inset;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: $font-link;
+    font-size: 1.125rem;
+    border-radius: 4px;
+
+    &:hover {
+      color: getColor(white01);
+      background: getColor(highlight01);
+    }
+  }
+
+  @media only screen and (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto) 1fr auto;
+    grid-template-areas:
+      "d1 d2"
+      "d1 d3"
+      "d1 d4"
+      "d5 d5";
+  }
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto) 1fr;
+    grid-template-areas:
+      "d1 d2"
+      "d1 d3"
+      "d1 d4"
+      "d1 d5";
+  }
+
+  @media only screen and (min-width: 992px) {
+    grid-template-columns: 3fr 2fr;
+  }
+}

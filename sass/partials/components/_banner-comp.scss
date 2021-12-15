@@ -1,0 +1,70 @@
+.banner__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .image {
+    z-index: -1;
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    max-height: 560px;
+    min-height: 400px;
+    height: 100%;
+    filter: brightness(0.6);
+  }
+
+  .description {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    padding: 0 1rem;
+  }
+
+  .title {
+    color: getColor(white01);
+    text-align: center;
+  }
+
+  .quote {
+    color: getColor(white01);
+    font-size: 22px;
+    text-align: center;
+    font-family: $font-title;
+    font-style: italic;
+  }
+
+  .link {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .button {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 4px 1rem;
+    background: getColor(white01);
+  }
+
+  .text {
+    color: getColor(highlight01);
+    font-size: 1.125rem;
+    font-family: $font-title;
+  }
+
+  .link:hover .text {
+    text-decoration: underline 1px;
+  }
+
+  .icon {
+    padding: 0.5rem 0;
+
+    width: 24px;
+  }
+}

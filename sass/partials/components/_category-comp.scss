@@ -1,0 +1,86 @@
+.category__container {
+  display: grid;
+  gap: 2rem;
+  grid-template-rows: repeat(3, 250px);
+  grid-template-areas:
+    "s1"
+    "s2"
+    "s3";
+
+  .section {
+    display: grid;
+    box-shadow: 0 4px 8px transparent;
+    transition: 0.3s ease;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .section:hover {
+    box-shadow: 0 4px 8px getColor(shadow01);
+  }
+
+  .media {
+    display: flex;
+    overflow: hidden;
+  }
+
+  img {
+    object-fit: cover;
+    transition: 0.3s ease;
+  }
+
+  .section:hover img {
+    transform: scale(1.02);
+  }
+
+  .section:nth-child(1) {
+    grid-area: s1;
+  }
+
+  .section:nth-child(2) {
+    grid-area: s2;
+  }
+
+  .section:nth-child(3) {
+    grid-area: s3;
+  }
+
+  .link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    background: getColor(white01);
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .section:hover .text {
+    text-decoration: underline 1px;
+    text-underline-offset: 2px;
+  }
+
+  .icon {
+    width: 24px;
+    stroke: getColor(color01);
+  }
+
+  @media only screen and (min-width: 576px) {
+    grid-template-rows: repeat(2, 250px);
+    grid-template-areas:
+      "s1 s1"
+      "s2 s3";
+  }
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas:
+      "s1 s2"
+      "s1 s3";
+  }
+}

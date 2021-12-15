@@ -1,0 +1,87 @@
+/* LOGO */
+.logo {
+  .st0 {
+    fill: getColor(color01);
+  }
+}
+
+/* ARROW */
+.arrow {
+  fill: none;
+  stroke: getColor(highlight01);
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+
+/* ARROW SMALL */
+.arrow-small {
+  .st0 {
+    fill: none;
+    stroke: getColor(color02);
+    stroke-miterlimit: 10;
+  }
+}
+
+/* CART */
+.cart {
+  .st0 {
+    fill: none;
+    stroke: getColor(color01);
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-miterlimit: 10;
+  }
+
+  .st1 {
+    fill: getColor(color01);
+  }
+}
+
+/* USER */
+.user .st2 {
+  fill: getColor(color01);
+}
+
+/* SEARCH */
+.search {
+  .st0 {
+    fill: none;
+    stroke: getColor(color01);
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+
+  .st1 {
+    fill: getColor(color01);
+  }
+}
+
+/* BAR OPEN */
+.bar-open {
+  rect {
+    fill: getColor(color01);
+  }
+}
+
+/* BAR CLOSED */
+.bar-closed {
+  .st0 {
+    fill: none;
+    stroke: hsl(24, 10%, 20%);
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+  }
+}
+
+/* HEART */
+
+.heart {
+  .st0 {
+    fill: getColor(color04);
+  }
+
+  .st1 {
+    fill: getColor(color02);
+  }
+}

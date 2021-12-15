@@ -1,0 +1,57 @@
+.article-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.article-section .article {
+  display: grid;
+  gap: 0.5rem;
+  background: var(--white01);
+  padding: 1rem;
+}
+
+.article-section .image {
+  display: block;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.article-section .title {
+  font-family: var(--title);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.article-section .link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.article-section .button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  transition: 0.2s ease;
+}
+
+.article-section .button .text {
+  color: var(--highlight01);
+  font-family: var(--title);
+}
+
+.article-section .button:hover .text {
+  text-decoration: underline 1px;
+}
+
+.article-section .button .icon {
+  width: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .article-section {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}

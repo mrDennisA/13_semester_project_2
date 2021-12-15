@@ -1,0 +1,65 @@
+.user__container {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 1rem;
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .name {
+    color: getColor(body01);
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .link:hover .name {
+    text-decoration: underline;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// Login Nav
+.loginNav__container {
+  position: relative;
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform: translate(0, 0.5rem);
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: getColor(white01);
+    box-shadow: 0 0 0 1px getColor(color02) inset;
+
+    &.active {
+      display: flex;
+    }
+  }
+}
+
+// Cart Nav
+.cartNav__container {
+  position: relative;
+
+  .number {
+    position: absolute;
+    left: 100%;
+    transform: translateX(-2px);
+    font-size: 14px;
+    font-weight: 700;
+  }
+}

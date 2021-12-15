@@ -1,0 +1,66 @@
+.login-section {
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+  width: 100%;
+  padding: 1rem 1rem 4rem;
+  margin: 2rem auto;
+  background: getColor(white01);
+  border-radius: 4px;
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .login-container {
+    display: grid;
+    gap: 2rem;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+
+    & > div {
+      display: grid;
+    }
+  }
+
+  label {
+    line-height: 1rem;
+  }
+
+  input {
+    padding: 0 1rem;
+    height: 40px;
+    box-shadow: 0 0 0 1px getColor(color03) inset;
+    background: getColor(white01);
+    font-family: $font-text;
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 4px;
+  }
+
+  input:hover {
+    box-shadow: 0 0 0 1px getColor(color02) inset;
+  }
+  input:focus {
+    box-shadow: 0 0 0 1px getColor(highlight01) inset;
+  }
+
+  button {
+    color: getColor(highlight01);
+    height: 48px;
+    box-shadow: 0 0 0 1px getColor(highlight01) inset;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: $font-link;
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+
+    &:hover {
+      color: getColor(white01);
+      background: getColor(highlight01);
+    }
+  }
+}

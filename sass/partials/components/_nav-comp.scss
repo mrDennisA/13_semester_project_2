@@ -1,0 +1,148 @@
+.header__container {
+  position: relative;
+  height: 48px;
+
+  .button {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    margin: 0 1rem;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .title .link {
+    display: block;
+  }
+
+  .title .logo {
+    display: block;
+    width: 40px;
+  }
+
+  .title .name {
+    display: none;
+  }
+}
+
+.nav__container {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: getColor(white01);
+  max-width: 250px;
+  width: 100%;
+  height: 100%;
+
+  &.active {
+    transform: translateX(0%);
+    transition: 0.2s ease;
+  }
+
+  .button {
+    margin: 4px 1rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .navlink {
+    display: grid;
+    border-top: 1px getColor(color03) solid;
+  }
+
+  .navlink .link {
+    color: getColor(color01);
+    padding: 0.5rem;
+    line-height: 32px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: $font-link;
+
+    border-bottom: 1px getColor(color03) solid;
+  }
+
+  .navlink .link.active {
+    color: getColor(highlight01);
+  }
+}
+
+.icon {
+  width: 40px;
+}
+
+@media only screen and (min-width: 576px) {
+  .header__container {
+    .title .name {
+      display: block;
+      font-size: 24px;
+    }
+
+    .title .logo {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header__container {
+    height: 96px;
+
+    .button {
+      display: none;
+    }
+
+    .title .name {
+      font-size: 36px;
+    }
+  }
+
+  .nav__container {
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+
+    display: block;
+    max-width: unset;
+    height: 48px;
+    background: unset;
+
+    .button {
+      display: none;
+    }
+
+    .navlink {
+      display: flex;
+      justify-content: center;
+      border-top: unset;
+      gap: 4rem;
+    }
+
+    .navlink .link {
+      font-size: 1.125rem;
+      border-bottom: unset;
+      box-shadow: 0 -2px 0 transparent inset;
+      transition: 0.3s ease;
+    }
+
+    .navlink .link:hover {
+      box-shadow: 0 -2px 0 getColor(color01) inset;
+    }
+  }
+}

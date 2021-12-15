@@ -1,0 +1,98 @@
+.addItem__container,
+.editItem__container {
+  display: grid;
+  gap: 1rem;
+
+  max-width: 600px;
+  width: 100%;
+  padding: 1rem 1rem 4rem;
+  margin: 0 auto;
+  background: getColor(white01);
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  form {
+    display: grid;
+    gap: 1rem;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  form div {
+    display: grid;
+  }
+
+  input,
+  textarea,
+  select {
+    border-radius: 4px;
+  }
+
+  input[type="text"],
+  select {
+    height: 40px;
+  }
+
+  input[type="text"],
+  input[type="file"],
+  select,
+  textarea {
+    padding: 0 1rem;
+    box-shadow: 0 0 0 1px getColor(color03) inset;
+    background: getColor(white01);
+    font-family: $font-text;
+    font-size: 1rem;
+    font-weight: 300;
+
+    &:disabled {
+      background: getColor(disabled01);
+      box-shadow: 0 0 0 1px getColor(disabled01) inset;
+      cursor: unset;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+    padding: 0.75rem 1rem;
+  }
+
+  input:hover:not(:disabled),
+  textarea:hover:not(:disabled) {
+    box-shadow: 0 0 0 1px getColor(color02) inset;
+  }
+
+  input:focus:not(:disabled),
+  textarea:focus:not(:disabled) {
+    box-shadow: 0 0 0 1px getColor(highlight01) inset;
+  }
+
+  button,
+  .button {
+    color: getColor(highlight01);
+    height: 48px;
+    box-shadow: 0 0 0 1px getColor(highlight01) inset;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: $font-link;
+    font-size: 1.125rem;
+    margin-top: 1rem;
+
+    &:hover:not(:disabled) {
+      color: getColor(white01);
+      background: getColor(highlight01);
+      box-shadow: 0 0 0 2px getColor(highlight01) inset;
+    }
+
+    &:disabled {
+      color: getColor(white01);
+      box-shadow: 0 0 0 2px getColor(disabled01) inset;
+      background: getColor(disabled01);
+      cursor: unset;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+main .container {
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  padding: 0 1rem;
+  max-width: 600;
+}
+/*# sourceMappingURL=login.css.map */

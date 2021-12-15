@@ -1,0 +1,17 @@
+main {
+  .container {
+    display: grid;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .line {
+    height: 1px;
+    background: hsl(24, 20%, 85%);
+    margin-bottom: 0.5rem;
+  }
+}
+
+// * {
+//   box-shadow: 0px 0px 0px 1px hsla(180, 100%, 20%, 0.5) inset;
+// }

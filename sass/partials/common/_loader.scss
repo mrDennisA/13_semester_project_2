@@ -1,0 +1,8 @@
+.loader {
+  transition: 1s;
+  opacity: 1;
+}
+
+.loader.active {
+  opacity: 0;
+}
