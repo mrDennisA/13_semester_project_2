@@ -16,7 +16,7 @@ export default function detailsComponent(data) {
         <h2 class="title__name">${data.title}</h2>
       </div>
       <div class="price">
-        <div class="price__number">€ ${data.price}</div>
+        <div class="price__number">$${data.price}</div>
       </div>
       <div class="add-to-cart">
         <button class="button">Add to Cart</button>
@@ -24,7 +24,6 @@ export default function detailsComponent(data) {
       <div class="description">
         <div class="description__text">${description}</div>
       </div>
-
     </form>
   `;
 

@@ -1,6 +1,6 @@
 import { PRODUCT_URL } from "../settings/api.js";
 import { loadToken } from "../settings/storage.js";
-import displayMassage from "../components/message-comp.js";
+import { massageComponent } from "../components/message-comp.js";
 
 export default function addItemFunction() {
   const message = document.querySelector(".addItem__container .message__container");
@@ -41,7 +41,7 @@ export default function addItemFunction() {
       media.files.length === 0
     ) {
       validateDisabled(formElements, false);
-      return displayMassage("warning", "Fill out All in form", ".message__container");
+      return massageComponent("warning", "Fill out All in form", ".message__container");
     }
 
     // Append Form Data
@@ -76,10 +76,10 @@ function serverRequest(method, url, data, form, formElements) {
   // Upload State
   request.onload = function () {
     if (request.status === 200) {
-      displayMassage("success", "Product added", ".message__container");
+      massageComponent("success", "Product added", ".message__container");
       form.reset();
     } else if (request.status !== 200) {
-      displayMassage("error", `Error ${request.status}: ${request.statusText}`, ".message__container");
+      massageComponent("error", `Error ${request.status}: ${request.statusText}`, ".message__container");
     }
     validateDisabled(formElements, false);
   };

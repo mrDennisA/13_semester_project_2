@@ -1,9 +1,12 @@
 import { CART_KEY, saveItem, loadItem } from "../settings/storage.js";
 import headerCartComponent from "../components/headerCart-comp.js";
+import { conformationComponent } from "../components/message-comp.js";
 
 export default function addToCartFunction(data) {
   const key = CART_KEY;
   const container = document.querySelector(".details__container");
+
+  let timer;
 
   container.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -31,7 +34,6 @@ export default function addToCartFunction(data) {
     }
 
     headerCartComponent();
+    conformationComponent("Item added to Cart");
   });
 }
-
-function findI(currentItemList, data) {}

@@ -6,7 +6,7 @@ import headerComponent from "./components/header-comp.js";
 import footerComponent from "./components/footer-comp.js";
 
 import loaderComponent from "./components/loader-comp.js";
-import massageComponent from "./components/message-comp.js";
+import { massageComponent } from "./components/message-comp.js";
 
 import breadcrumbsComponent from "./components/breadcrumbs-comp.js";
 import editItemComponent from "./components/editItem-comp.js";

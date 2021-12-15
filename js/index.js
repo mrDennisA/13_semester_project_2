@@ -5,7 +5,7 @@ import headerComponent from "./components/header-comp.js";
 import footerComponent from "./components/footer-comp.js";
 
 import loaderComponent from "./components/loader-comp.js";
-import massageComponent from "./components/message-comp.js";
+import { massageComponent } from "./components/message-comp.js";
 
 import bannerComponent from "./components/banner-comp.js";
 import categoryComponent from "./components/category-comp.js";

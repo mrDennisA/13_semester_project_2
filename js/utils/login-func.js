@@ -1,6 +1,6 @@
 import { BASE_URL } from "../settings/api.js";
 import { saveToken, saveUser } from "../settings/storage.js";
-import massageComponent from "../components/message-comp.js";
+import { massageComponent } from "../components/message-comp.js";
 
 export default function loginFunction() {
   const form = document.querySelector(".login-container");

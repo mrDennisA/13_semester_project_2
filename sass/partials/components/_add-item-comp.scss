@@ -85,12 +85,12 @@
     &:hover:not(:disabled) {
       color: getColor(white01);
       background: getColor(highlight01);
-      box-shadow: 0 0 0 2px getColor(highlight01) inset;
+      box-shadow: 0 0 0 1px getColor(highlight01) inset;
     }
 
     &:disabled {
       color: getColor(white01);
-      box-shadow: 0 0 0 2px getColor(disabled01) inset;
+      box-shadow: 0 0 0 1px getColor(disabled01) inset;
       background: getColor(disabled01);
       cursor: unset;
     }

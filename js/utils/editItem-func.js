@@ -1,6 +1,6 @@
 import { GET_JSON, PRODUCT_URL, CATEGORY_URL, SUBCATEGORY_URL } from "../settings/api.js";
 import { loadToken } from "../settings/storage.js";
-import displayMassage from "../components/message-comp.js";
+import { massageComponent } from "../components/message-comp.js";
 import editItemComponent from "../components/editItem-comp.js";
 
 export default function addItemFunction() {
@@ -32,7 +32,7 @@ export default function addItemFunction() {
     // Validate Form
     if (titleValue.length === 0 || priceValue === 0) {
       validateDisabled(formElements, false);
-      return displayMassage("warning", "Fill out All in form", ".message__container");
+      return massageComponent("warning", "Fill out All in form", ".message__container");
     }
 
     // Append Form Data
@@ -64,10 +64,10 @@ function serverRequest(method, url, data, form, formElements) {
   // Upload State
   request.onload = function () {
     if (request.status === 200) {
-      displayMassage("success", "Product added", ".message__container");
+      massageComponent("success", "Product added", ".message__container");
       updateEditForm(form);
     } else if (request.status !== 200) {
-      displayMassage("error", `Error ${request.status}: ${request.statusText}`, ".message__container");
+      massageComponent("error", `Error ${request.status}: ${request.statusText}`, ".message__container");
     }
     validateDisabled(formElements, false);
   };

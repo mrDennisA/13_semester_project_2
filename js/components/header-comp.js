@@ -30,15 +30,13 @@ export default function headerComponent(json = "") {
       <div class="search__container"></div>
     </div>
 
-    <div class="modal__container"></div>
-
     <nav class="nav__container">
       <button class="button">${BARCLOSED_ICON}</button>
       <div class="navlink">
         <a class="link ${pathname === "" || pathname === "index" ? "active" : ""}" href="./">Home</a>
-        <a class="link ${pathname === "kitchen" || subPathname(json) === "kitchen" ? "active" : ""}" href="./kitchen.html">Kitchen</a>
-        <a class="link ${pathname === "lounge" || subPathname(json) === "lounge" ? "active" : ""}" href="./lounge.html">Lounge</a>
-        <a class="link ${pathname === "bedroom" || subPathname(json) === "bedroom" ? "active" : ""}" href="./bedroom.html">Bedroom</a>
+        <a class="link ${pathname === "kitchen" || subPathname(json, "kitchen") === "kitchen" ? "active" : ""}" href="./kitchen.html">Kitchen</a>
+        <a class="link ${pathname === "lounge" || subPathname(json, "lounge") === "lounge" ? "active" : ""}" href="./lounge.html">Lounge</a>
+        <a class="link ${pathname === "bedroom" || subPathname(json, "bedroom") === "bedroom" ? "active" : ""}" href="./bedroom.html">Bedroom</a>
       </div>
     </nav>
   `;
@@ -49,18 +47,10 @@ export default function headerComponent(json = "") {
   headerSearchComponent();
 }
 
-function subPathname(json) {
+function subPathname(json, name) {
   if (typeof json !== "string") {
-    if (json.category.name.toLowerCase() === "kitchen") {
-      return "kitchen";
-    }
-
-    if (json.category.name.toLowerCase() === "lounge") {
-      return "lounge";
-    }
-
-    if (json.category.name.toLowerCase() === "bedroom") {
-      return "bedroom";
+    if (json.category.name.toLowerCase() === name) {
+      return name;
     }
     return false;
   }

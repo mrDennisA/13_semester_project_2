@@ -17,7 +17,19 @@ export default function headerFunction() {
     bodyContainer.classList.toggle("overflow");
   });
 
+  const body = document.querySelector("body");
+  let timer;
+  const runTimer = () => {
+    timer = setTimeout(() => {
+      body.classList.remove("preload");
+    }, 100);
+  };
+
   window.addEventListener("resize", () => {
+    body.classList.add("preload");
+    clearTimeout(timer);
+    runTimer();
+
     if (window.innerWidth >= 768) {
       modalContainer.classList.remove("active");
       navContainer.classList.remove("active");

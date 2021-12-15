@@ -1,6 +1,6 @@
 import { CART_KEY, loadItem } from "../settings/storage.js";
 import cartFunction from "../utils/cart-func.js";
-import massageComponent from "./message-comp.js";
+import { massageComponent } from "./message-comp.js";
 
 export default function cartComponent() {
   const key = CART_KEY;
@@ -36,8 +36,11 @@ export default function cartComponent() {
             </div>
           </div>
           <div class="price__container">
-            <div class="price">€ ${item.price}</div>
-            <div class="price total">Total: € ${priceTotal(item)}</div>
+            <div>$${item.price}</div>
+          </div>
+          <div class="total-price__container">
+            <span>Total:</span>
+            <span>$${priceTotal(item)}</span>
           </div>
           <div class="delete__container">
             <button class="button delete" data-id="${item.id}">X</button>
@@ -50,8 +53,9 @@ export default function cartComponent() {
 
     // Sum Items Total
     container.innerHTML += `
-      <div class="cart-total__component">
-        <div>Total:€ ${sumItemsTotal}
+      <div class="cart-total__container">
+        <div class="line"></div>
+        <div class="price" >Total: $${sumItemsTotal}</div>
       </div>
     `;
 
