@@ -55,7 +55,7 @@ export default function cartComponent() {
     container.innerHTML += `
       <div class="cart-total__container">
         <div class="line"></div>
-        <div class="price" >Total: $${sumItemsTotal}</div>
+        <div class="price" >Total: $${sumItemsTotal.toFixed(2)}</div>
       </div>
     `;
 
