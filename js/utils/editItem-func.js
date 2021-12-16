@@ -15,7 +15,7 @@ export default function addItemFunction() {
   const price = document.querySelector(".addItem-form #price");
   const cover = document.querySelector(".addItem-form #cover");
 
-  console.log(featured);
+  // console.log(featured);
 
   // Submit Form
   form.addEventListener("submit", (e) => {
