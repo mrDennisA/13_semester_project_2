@@ -22,7 +22,7 @@
     margin: 0 auto;
   }
 
-  form div {
+  form > div {
     display: grid;
   }
 
@@ -33,12 +33,22 @@
   }
 
   input[type="text"],
+  input[type="number"],
   select {
     height: 40px;
   }
 
-  input[type="text"],
-  input[type="file"],
+  select,
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+  }
+
+  input:not([type="submit"], [type="button"]),
   select,
   textarea {
     padding: 0 1rem;

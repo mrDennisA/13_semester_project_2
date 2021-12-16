@@ -3,10 +3,9 @@ export const BANNER_URL = BASE_URL + "banners/";
 export const CATEGORY_URL = BASE_URL + "categories/";
 export const SUBCATEGORY_URL = BASE_URL + "subcategories/";
 export const PRODUCT_URL = BASE_URL + "products/";
-export const PROMOTE_URL = BASE_URL + "promotes/";
 
 export async function GET_JSON(url) {
-  return await (await fetch(url)).json();
+  return (await fetch(url)).json();
 }
 export function GET_FILTER(data, filter) {
   return data.find((item) => item.name.toLowerCase() === filter.toLowerCase());

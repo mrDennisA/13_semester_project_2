@@ -10,9 +10,12 @@ export default function addItemFunction() {
   const title = document.querySelector(".addItem-form #title");
   const category = document.querySelector(".addItem-form #category");
   const subcategory = document.querySelector(".addItem-form #subcategory");
+  const featured = document.querySelector(".addItem-form #featured");
   const description = document.querySelectorAll(".addItem-form .description");
   const price = document.querySelector(".addItem-form #price");
   const cover = document.querySelector(".addItem-form #cover");
+
+  console.log(featured);
 
   // Submit Form
   form.addEventListener("submit", (e) => {
@@ -25,6 +28,13 @@ export default function addItemFunction() {
     const titleValue = title.value;
     const categoryValue = category.value;
     const subcategoryValue = subcategory.value;
+    let featuredChecked;
+    if (!featured) {
+      featuredChecked = false;
+    } else {
+      featuredChecked = featured.checked;
+    }
+
     const descriptionValue = Array.from(description, (item) => ({ paragraph: item.value }));
     const priceValue = price.value;
     const coverFile = Array.from(cover.files, (files) => files);
@@ -40,6 +50,7 @@ export default function addItemFunction() {
       title: titleValue,
       category: { id: categoryValue },
       subcategory: { id: subcategoryValue },
+      featured: featuredChecked,
       text: { description: descriptionValue },
       price: priceValue,
     };

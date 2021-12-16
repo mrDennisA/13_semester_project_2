@@ -1,13 +1,13 @@
 import editItemFunction from "../utils/editItem-func.js";
 import deleteFunction from "../utils/delete-func.js";
 
-export default function addItemComponent(json, jsonCategory, jsonSubcategory) {
+export default function addItemComponent(jsonProduct, jsonCategory, jsonSubcategory) {
   const container = document.querySelector(".form__container");
   container.innerHTML = `
-  <form class="addItem-form" data-id="${json.id}">
+  <form class="addItem-form" data-id="${jsonProduct.id}">
     <div>
       <label for="title">Title</label>
-      <input type="text" id="title" name="title" value="${json.title}"/>
+      <input type="text" id="title" name="title" value="${jsonProduct.title}"/>
     </div>
     <div>
       <label for="category">Category</label>
@@ -22,17 +22,21 @@ export default function addItemComponent(json, jsonCategory, jsonSubcategory) {
       </select>
     </div>
     <div>
+      <label for="featured">Featured</label>
       <div>
-        <label for="description-1">Description</label>
-        <textarea class="description" id="description-1" name="description" />${json.text.description[0].paragraph}</textarea>
+        <input class="test" type="checkbox" id="featured" name="featured" ${jsonProduct.featured === true ? "checked" : ""} />
       </div>
     </div>
     <div>
-      <label for="price">Price</label>
-      <input type="text" type="number" id="price" name="price" value="${json.price}"/>
+      <label for="description">Description</label>
+      <textarea class="description" id="description-1" name="description" />${jsonProduct.text.description[0].paragraph}</textarea>
     </div>
     <div>
-      <img class="image" src="${json.cover.url}">
+      <label for="price">Price</label>
+      <input type="text" type="number" id="price" name="price" value="${jsonProduct.price}"/>
+    </div>
+    <div>
+      <img class="image" src="${jsonProduct.cover.url}">
     </div>
     <div>
       <label for="cover">Update Image</label>
@@ -45,7 +49,7 @@ export default function addItemComponent(json, jsonCategory, jsonSubcategory) {
 
   const categoryContainer = document.querySelector(".addItem-form #category");
   jsonCategory.forEach((item) => {
-    if (item.id === json.category.id) {
+    if (item.id === jsonProduct.category.id) {
       categoryContainer.innerHTML += `
       <option value="${item.id}" selected>${item.name}</option>
     `;
@@ -59,7 +63,7 @@ export default function addItemComponent(json, jsonCategory, jsonSubcategory) {
   const subcategoryContainer = document.querySelector(".addItem-form #subcategory");
 
   jsonSubcategory.forEach((item) => {
-    if (item.id === json.subcategory.id) {
+    if (item.id === jsonProduct.subcategory.id) {
       subcategoryContainer.innerHTML += `
       <option value="${item.id}" selected>${item.name}</option>
     `;
@@ -71,5 +75,5 @@ export default function addItemComponent(json, jsonCategory, jsonSubcategory) {
   });
 
   editItemFunction();
-  deleteFunction(json.id);
+  deleteFunction(jsonProduct.id);
 }

@@ -21,14 +21,18 @@ export default function addItemComponent(jsonCategory, jsonSubcategory) {
       </select>
     </div>
     <div>
+      <label for="featured">Featured</label>\
       <div>
-        <label for="description-1">Description</label>
-        <textarea class="description" id="description-1" name="description" /></textarea>
+        <input type="checkbox" id="featured" name="featured" />
       </div>
     </div>
     <div>
+      <label for="description">Description</label>
+      <textarea class="description" id="description" name="description" /></textarea>
+    </div>
+    <div>
       <label for="price">Price</label>
-      <input type="text" type="number" id="price" name="price" />
+      <input type="number" id="price" name="price" />
     </div>
     <div>
       <label for="cover">Upload Image Cover</label>
@@ -44,6 +48,7 @@ export default function addItemComponent(jsonCategory, jsonSubcategory) {
 
   selectOption(jsonCategory, ".addItem__container #category");
   selectOption(jsonSubcategory, ".addItem__container #subcategory");
+
   addItemFunction();
 }
 

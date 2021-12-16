@@ -9,6 +9,7 @@ export default function addItemFunction() {
   const title = document.querySelector(".addItem__container #title");
   const category = document.querySelector(".addItem__container #category");
   const subcategory = document.querySelector(".addItem__container #subcategory");
+  const featured = document.querySelector(".addItem__container #featured");
   const description = document.querySelectorAll(".addItem__container .description");
   const price = document.querySelector(".addItem__container #price");
   const cover = document.querySelector(".addItem__container #cover");
@@ -25,6 +26,12 @@ export default function addItemFunction() {
     const titleValue = title.value.trim();
     const categoryValue = category.value;
     const subcategoryValue = subcategory.value;
+    let featuredChecked;
+    if (!featured) {
+      featuredChecked = false;
+    } else {
+      featuredChecked = featured.checked;
+    }
     const descriptionValue = Array.from(description, (item) => ({ paragraph: item.value.trim() }));
     const priceValue = parseFloat(price.value);
     const coverFile = Array.from(cover.files, (files) => files);
@@ -49,6 +56,7 @@ export default function addItemFunction() {
       title: titleValue,
       category: { id: categoryValue },
       subcategory: { id: subcategoryValue },
+      featured: featuredChecked,
       text: { description: descriptionValue },
       price: priceValue,
     };

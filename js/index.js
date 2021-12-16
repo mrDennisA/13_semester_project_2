@@ -1,4 +1,4 @@
-import { BANNER_URL, CATEGORY_URL, PROMOTE_URL, GET_JSON, GET_FILTER } from "./settings/api.js";
+import { BANNER_URL, PRODUCT_URL, CATEGORY_URL, GET_JSON, GET_FILTER } from "./settings/api.js";
 
 import focusFunction from "./utils/focus-func.js";
 import headerComponent from "./components/header-comp.js";
@@ -23,10 +23,10 @@ container.innerHTML = `
 
 (async function () {
   try {
+    const jsonProduct = await GET_JSON(PRODUCT_URL);
     const jsonBanner = await GET_JSON(BANNER_URL);
     const jsonCategory = await GET_JSON(CATEGORY_URL);
-    const jsonPremote = await GET_JSON(PROMOTE_URL);
-    const premoteData = GET_FILTER(jsonPremote, "featured");
+    const featured = jsonProduct.filter((item) => item.featured);
 
     container.innerHTML = `
     <div class="container">
@@ -42,7 +42,7 @@ container.innerHTML = `
 
     bannerComponent(jsonBanner);
     categoryComponent(jsonCategory);
-    cardComponent(premoteData.products);
+    cardComponent(featured);
   } catch (error) {
     console.log("Error message", error);
     massageComponent("error", `${error}`, "main .container");

@@ -1,4 +1,4 @@
-import { CATEGORY_URL, SUBCATEGORY_URL } from "./settings/api.js";
+import { GET_JSON, CATEGORY_URL, SUBCATEGORY_URL } from "./settings/api.js";
 import { loadToken } from "./settings/storage.js";
 
 import focusFunction from "./utils/focus-func.js";
@@ -27,8 +27,8 @@ container.innerHTML = `
 
 (async function () {
   try {
-    const jsonCategory = await (await fetch(CATEGORY_URL)).json();
-    const jsonSubcategory = await (await fetch(SUBCATEGORY_URL)).json();
+    const jsonCategory = await GET_JSON(CATEGORY_URL);
+    const jsonSubcategory = await GET_JSON(SUBCATEGORY_URL);
 
     container.innerHTML = `
   <div class="container">

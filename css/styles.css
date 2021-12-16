@@ -408,8 +408,8 @@ label {
   margin: 0 auto;
 }
 
-.addItem__container form div,
-.editItem__container form div {
+.addItem__container form > div,
+.editItem__container form > div {
   display: -ms-grid;
   display: grid;
 }
@@ -424,18 +424,31 @@ label {
 }
 
 .addItem__container input[type="text"],
+.addItem__container input[type="number"],
 .addItem__container select,
 .editItem__container input[type="text"],
+.editItem__container input[type="number"],
 .editItem__container select {
   height: 40px;
 }
 
-.addItem__container input[type="text"],
-.addItem__container input[type="file"],
+.addItem__container select,
+.addItem__container input[type="checkbox"],
+.editItem__container select,
+.editItem__container input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.addItem__container input[type="checkbox"],
+.editItem__container input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+}
+
+.addItem__container input,
 .addItem__container select,
 .addItem__container textarea,
-.editItem__container input[type="text"],
-.editItem__container input[type="file"],
+.editItem__container input,
 .editItem__container select,
 .editItem__container textarea {
   padding: 0 1rem;
@@ -447,12 +460,10 @@ label {
   font-weight: 300;
 }
 
-.addItem__container input[type="text"]:disabled,
-.addItem__container input[type="file"]:disabled,
+.addItem__container input:disabled,
 .addItem__container select:disabled,
 .addItem__container textarea:disabled,
-.editItem__container input[type="text"]:disabled,
-.editItem__container input[type="file"]:disabled,
+.editItem__container input:disabled,
 .editItem__container select:disabled,
 .editItem__container textarea:disabled {
   background: #d9d9d9;

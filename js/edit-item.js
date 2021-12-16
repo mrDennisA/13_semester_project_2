@@ -14,7 +14,6 @@ import editItemComponent from "./components/editItem-comp.js";
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const url = PRODUCT_URL + id;
 
 if (!loadToken() || !id) {
   location.href = "/";
@@ -30,11 +29,11 @@ container.innerHTML = `
 
 (async function () {
   try {
-    const json = await GET_JSON(url);
-    const jsonCategory = await (await fetch(CATEGORY_URL)).json();
-    const jsonSubcategory = await (await fetch(SUBCATEGORY_URL)).json();
-
-    document.title = `Home Decor | Edit ${json.title}`;
+    const jsonProduct = await GET_JSON(PRODUCT_URL + id);
+    const jsonCategory = await GET_JSON(CATEGORY_URL);
+    const jsonSubcategory = await GET_JSON(SUBCATEGORY_URL);
+    console.log(jsonProduct);
+    document.title = `Home Decor | Edit ${jsonProduct.title}`;
 
     container.innerHTML = `
       <div class="container">
@@ -48,7 +47,7 @@ container.innerHTML = `
     `;
 
     breadcrumbsComponent();
-    editItemComponent(json, jsonCategory, jsonSubcategory);
+    editItemComponent(jsonProduct, jsonCategory, jsonSubcategory);
   } catch (error) {
     console.log("Error message", error);
     massageComponent("error", `${error}`, "main .container");
