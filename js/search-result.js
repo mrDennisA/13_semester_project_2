@@ -15,7 +15,7 @@ const params = new URLSearchParams(queryString);
 const search = params.get("search");
 
 if (!search) {
-  location.href = "/";
+  location.href = "./";
 }
 
 document.title = "Home Decor | Search Result";

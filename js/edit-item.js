@@ -16,7 +16,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 if (!loadToken() || !id) {
-  location.href = "/";
+  location.href = "./";
 }
 
 focusFunction();
@@ -32,7 +32,7 @@ container.innerHTML = `
     const jsonProduct = await GET_JSON(PRODUCT_URL + id);
     const jsonCategory = await GET_JSON(CATEGORY_URL);
     const jsonSubcategory = await GET_JSON(SUBCATEGORY_URL);
-    console.log(jsonProduct);
+
     document.title = `Home Decor | Edit ${jsonProduct.title}`;
 
     container.innerHTML = `

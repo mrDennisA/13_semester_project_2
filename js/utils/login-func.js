@@ -44,7 +44,7 @@ export default function loginFunction() {
       if (json.user) {
         saveToken(json.jwt);
         saveUser(json.user);
-        location.href = "/";
+        location.href = "./";
       }
 
       if (json.error) {

@@ -1,4 +1,4 @@
-import { BANNER_URL, PRODUCT_URL, CATEGORY_URL, GET_JSON, GET_FILTER } from "./settings/api.js";
+import { BANNER_URL, PRODUCT_URL, CATEGORY_URL, GET_JSON } from "./settings/api.js";
 
 import focusFunction from "./utils/focus-func.js";
 import headerComponent from "./components/header-comp.js";

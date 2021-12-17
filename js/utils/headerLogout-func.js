@@ -8,7 +8,7 @@ export default function headerLogoutFunction() {
       if (confirmLogout) {
         clearKeyStorage([TOKEN_KEY, USER_KEY]);
 
-        location.href = "/";
+        location.href = "./";
       }
     });
   }

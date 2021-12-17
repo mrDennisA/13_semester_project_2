@@ -18,7 +18,7 @@ export default function deleteFunction(id) {
 
       try {
         await (await fetch(url, option)).json();
-        location.href = "/";
+        location.href = "./";
       } catch (error) {
         console.log(error);
       }

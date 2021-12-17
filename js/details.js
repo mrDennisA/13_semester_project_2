@@ -16,7 +16,7 @@ const id = params.get("id");
 const url = PRODUCT_URL + id;
 
 if (!id) {
-  location.href = "/";
+  location.href = "./";
 }
 
 focusFunction();

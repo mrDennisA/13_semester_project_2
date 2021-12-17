@@ -12,7 +12,7 @@ import breadcrumbsComponent from "./components/breadcrumbs-comp.js";
 import addItemComponent from "./components/addItem-comp.js";
 
 if (!loadToken()) {
-  location.href = "/";
+  location.href = "./";
 }
 
 document.title = "Home Decor | Add Item";
