@@ -63,7 +63,7 @@
     font-size: 1.125rem;
     border-radius: 4px;
 
-    &:hover {
+    &:hover:not(:disabled) {
       color: getColor(white01);
       background: getColor(highlight01);
     }

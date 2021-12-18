@@ -93,6 +93,19 @@ main {
   transition: none !important;
 }
 
+input,
+textarea,
+select,
+button,
+.button {
+  &:disabled {
+    color: getColor(body01);
+    background: getColor(disabled01);
+    box-shadow: 0 0 0 1px getColor(disabled01) inset;
+    cursor: unset;
+  }
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;

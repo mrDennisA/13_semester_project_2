@@ -1,15 +1,15 @@
 import { CART_KEY, saveItem, loadItem } from "../settings/storage.js";
 import headerCartComponent from "../components/headerCart-comp.js";
-import { conformationComponent } from "../components/message-comp.js";
 
 export default function addToCartFunction(data) {
   const key = CART_KEY;
-  const container = document.querySelector(".details__container");
+  const form = document.querySelector(".details__component");
+  const submitButton = document.querySelector(".details__component button");
 
-  let timer;
-
-  container.addEventListener("submit", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
+    submitButton.disabled = true;
+    submitButton.innerHTML = "Adding...";
 
     const currentItemList = loadItem(key);
     const findItem = currentItemList.find((item) => item.id === data.id);
@@ -33,7 +33,10 @@ export default function addToCartFunction(data) {
       saveItem(key, updateItemList);
     }
 
-    headerCartComponent();
-    conformationComponent("Item added to Cart");
+    setTimeout(() => {
+      submitButton.disabled = false;
+      submitButton.innerHTML = "Add to Cart";
+      headerCartComponent();
+    }, 1000);
   });
 }

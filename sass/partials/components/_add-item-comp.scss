@@ -57,12 +57,6 @@
     font-family: $font-text;
     font-size: 1rem;
     font-weight: 300;
-
-    &:disabled {
-      background: getColor(disabled01);
-      box-shadow: 0 0 0 1px getColor(disabled01) inset;
-      cursor: unset;
-    }
   }
 
   textarea {
