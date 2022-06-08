@@ -1,5 +1,5 @@
-# Voke Hair
-![vokehair](https://user-images.githubusercontent.com/3404304/172705314-b3d7943e-1741-42d2-8043-447972c43f66.jpg)
+# Home Decor
+![homedecor](https://user-images.githubusercontent.com/3404304/172708648-833a9653-19e4-47f3-9c25-7813a56a1d27.jpg)
 
 ## Description
 Project Exam 2: Making a website for a real world client. React for front-ned, Strapi for back-end.
@@ -9,7 +9,7 @@ Voke Hair is an information website for Voke Hair brand products and new launche
 
 You can list a the tech stack that you've used over here
 
-- [React.js](https://reactjs.org/)
+- [JavaScript](https://www.javascript.com/)
 - [Strapi.io](https://strapi.io/)
 
 ## Getting Started
